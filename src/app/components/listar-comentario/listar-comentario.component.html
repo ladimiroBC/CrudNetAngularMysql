@@ -1,0 +1,30 @@
+<div class="row mt-3">
+    <div class="col-lg-6">
+        <h3>Listado de comentarios</h3>
+    </div>
+    <div class="col-lg-6">
+        <button class="btn btn-primary float-end">Nuevo comentario</button>
+    </div>
+</div>
+
+<table *ngIf="listarComentarios.length>0" class="table table-hover table-striped mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Creador</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comentario of listarComentarios">
+        <th scope="row">{{comentario.titulo}}</th>
+        <td>{{comentario.creador}}</td>
+        <td>{{comentario.fechaCreacion | date:'dd/MM/YYYY'}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="listarComentarios.length==0" class="row mt-3">
+    <h4>No hay comentarios que mostrar</h4>
+  </div>
