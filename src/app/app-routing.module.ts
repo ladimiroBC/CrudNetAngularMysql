@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'', component:ListarComentarioComponent},
   {path:'agregar', component:AgregarEditarComentarioComponent},
   {path:'editar/:id', component:AgregarEditarComentarioComponent},
-  {path:'ver', component:VerComentarioComponent},
+  {path:'ver/:id', component:VerComentarioComponent},
   {path:'**', redirectTo:'/', pathMatch:'full'},
 ];
 
