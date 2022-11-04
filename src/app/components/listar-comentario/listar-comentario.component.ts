@@ -9,16 +9,16 @@ import { Comentario } from 'src/app/interfaces/comentario';
 export class ListarComentarioComponent implements OnInit {
 
   listarComentarios: Comentario[]=[
-    // {titulo:"Java", 
-    // creador:"James", 
-    // fechaCreacion:new Date(), 
-    // texto:"Orientado a objetos"
-    // },
-    // {titulo:"C#", 
-    // creador:"Anders", 
-    // fechaCreacion:new Date(), 
-    // texto:"Orientado a objetos"
-    // },
+    {titulo:"Java", 
+    creador:"James", 
+    fechaCreacion:new Date(), 
+    texto:"Orientado a objetos"
+    },
+    {titulo:"C#", 
+    creador:"Anders", 
+    fechaCreacion:new Date(), 
+    texto:"Orientado a objetos"
+    },
   ]
 
   constructor() { }

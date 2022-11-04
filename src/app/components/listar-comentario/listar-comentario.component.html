@@ -3,7 +3,7 @@
         <h3>Listado de comentarios</h3>
     </div>
     <div class="col-lg-6">
-        <button class="btn btn-primary float-end">Nuevo comentario</button>
+        <button class="btn btn-primary float-end" routerLink="agregar">Nuevo comentario</button>
     </div>
 </div>
 
@@ -21,7 +21,10 @@
         <th scope="row">{{comentario.titulo}}</th>
         <td>{{comentario.creador}}</td>
         <td>{{comentario.fechaCreacion | date:'dd/MM/YYYY'}}</td>
-        <td></td>
+        <td>
+          <button class="btn btn-warning btn-sm m-1">Editar</button>
+          <button class="btn btn-danger btn-sm m-1">Eliminar</button>
+        </td>
       </tr>
     </tbody>
   </table>
