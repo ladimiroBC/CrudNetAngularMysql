@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Comentario } from 'src/app/interfaces/comentario';
+import { ComentarioService } from 'src/app/services/comentario.service';
 
 @Component({
   selector: 'app-listar-comentario',
@@ -8,22 +9,29 @@ import { Comentario } from 'src/app/interfaces/comentario';
 })
 export class ListarComentarioComponent implements OnInit {
 
-  listarComentarios: Comentario[]=[
-    {titulo:"Java", 
-    creador:"James", 
-    fechaCreacion:new Date(), 
-    texto:"Orientado a objetos"
-    },
-    {titulo:"C#", 
-    creador:"Anders", 
-    fechaCreacion:new Date(), 
-    texto:"Orientado a objetos"
-    },
-  ]
+  listarComentarios: Comentario[]=[]
 
-  constructor() { }
+  constructor(private _commentSvc:ComentarioService) { }
 
   ngOnInit(): void {
+    this.getComment();
+  }
+
+  getComment(){
+    this._commentSvc.getListComment().subscribe(data=>{
+      this.listarComentarios=data;
+    },err=>{
+      console.log(err);
+    })
+  }
+
+  eliminarComentario(id:any){
+    console.log(id);
+    this._commentSvc.deleteComment(id).subscribe(data=>{
+      this.getComment();
+    },err=>{
+      console.log(err)
+    })    
   }
 
 }

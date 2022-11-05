@@ -19,11 +19,13 @@
     <tbody>
       <tr *ngFor="let comentario of listarComentarios">
         <th scope="row">{{comentario.titulo}}</th>
-        <td>{{comentario.creador}}</td>
+        <td>
+          <a [routerLink]="['/ver', 1]">{{comentario.creador}}</a>
+        </td>
         <td>{{comentario.fechaCreacion | date:'dd/MM/YYYY'}}</td>
         <td>
           <button class="btn btn-warning btn-sm m-1">Editar</button>
-          <button class="btn btn-danger btn-sm m-1">Eliminar</button>
+          <button (click)="eliminarComentario(comentario.id)" class="btn btn-danger btn-sm m-1">Eliminar</button>
         </td>
       </tr>
     </tbody>

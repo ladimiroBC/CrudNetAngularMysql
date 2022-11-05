@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 
 //Modulos
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 //Componentes
 import { AgregarEditarComentarioComponent } from './components/agregar-editar-comentario/agregar-editar-comentario.component';
@@ -25,7 +26,8 @@ import { VerComentarioComponent } from './components/ver-comentario/ver-comentar
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
