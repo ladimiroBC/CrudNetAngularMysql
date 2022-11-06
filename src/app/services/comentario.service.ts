@@ -8,6 +8,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Comentario } from '../interfaces/comentario';
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,17 @@ export class ComentarioService {
 
   deleteComment(id:number):Observable<any>{
     return this.http.delete(this.UrlApi+this.GetUrlApi+id)
+  }
+
+  getCommentId(id:number):Observable<any>{
+    return this.http.get(this.UrlApi+this.GetUrlApi+id);
+  }
+
+  saveComment(comentario:Comentario):Observable<any>{
+    return this.http.post(this.UrlApi+this.GetUrlApi,comentario); 
+  }
+
+  updateComment(id:number,comentario:Comentario):Observable<any>{
+    return this.http.put(this.UrlApi+this.GetUrlApi+id,comentario)
   }
 }

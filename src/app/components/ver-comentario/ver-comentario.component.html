@@ -1,8 +1,8 @@
-<div class="container">
-    <h3>Java</h3>
-    <h5>Java es un lenguaje de programación ampliamente utilizado para codificar aplicaciones web.</h5>
+<div *ngIf="comentario != undefined" class="container">
+    <h3>{{comentario.titulo}}</h3>
+    <h5>{{comentario.texto}}</h5>
     <ul>
-        <li>James</li>
-        <li>4/11/1995</li>
+        <li>{{comentario.creador}}</li>
+        <li>{{comentario.fechaCreacion | date:'dd/MM/YYYY'}}</li>
     </ul>
 </div>
